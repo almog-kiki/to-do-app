@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  django_server_to_do_app:
+    restart: always
+    container_name: django_server_to_do_app
+    build:
+      context: ./server
+      dockerfile: Dockerfile.dev
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - 8000:8000
+    env_file:
+      - ./server/.env.dev
+  
+  client_to_do_app:
+    container_name: client_to_do_app
+    build:
+      context: ./client
+      dockerfile: Dockerfile.dev
+    ports:
+      - "4200:80"

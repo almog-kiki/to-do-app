@@ -1,0 +1,15 @@
+.add-task{
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 1em;
+}
+.clear-btn{
+    width: 120px;
+}
+.submit-btn{
+    width: 120px;
+}
+.btns{
+    display: flex;
+    justify-content: flex-end;
+}

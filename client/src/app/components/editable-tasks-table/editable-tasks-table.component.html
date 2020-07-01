@@ -1,0 +1,47 @@
+
+<div  class="card">
+    <div class="card-header font-weight-bold text-uppercase py-2 table-title">
+        <span class="text-center">
+            My Tasks
+        </span>
+        <button type="button" mdbBtn color="danger" rounded="true" size="sm" (click)="removeAllTasks()">Remove All Tasks</button>
+    </div>
+
+    <div *ngIf="isLoading" class="loader" >
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+    </div>
+    <div *ngIf="!isLoading" class="card-body">
+      <div id="table" class="table-editable">
+        <table class="table table-bordered table-responsive-md table-striped text-center">
+          <tr>
+            <th class="text-center">Title</th>
+            <th class="text-center">Content</th>
+            <th class="text-center">created</th>
+            <th class="text-center">modify</th>
+            <th class="text-center">Remove</th>
+          </tr>
+          <tr *ngFor="let task of tasks; let id = index">
+            <td>
+              <span contenteditable="true" (keyup)="changeValue($event)" (blur)="updateList(id, 'title', task ,$event)">{{task.title}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue($event)" (blur)="updateList(id, 'content',task, $event)">{{task.content}}</span>
+            </td>
+            <td>
+              <span contenteditable="false" (keyup)="changeValue($event)" (blur)="updateList(id, 'created',task, $event)">{{task.created}}</span>
+            </td>
+            <td>
+              <span contenteditable="false" (keyup)="changeValue($event)" (blur)="updateList(id, 'modify', task, $event)">{{ task.modify_date }}</span>
+            </td>
+            <td>
+              <span class="table-remove">
+                <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="remove(task.id)">Remove</button>
+              </span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+</div>
