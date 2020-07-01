@@ -11,7 +11,7 @@ services:
     ports:
       - 8000:8000
     env_file:
-      - ./server/.env.dev
+      - ./server/.env
   
   client_to_do_app:
     container_name: client_to_do_app

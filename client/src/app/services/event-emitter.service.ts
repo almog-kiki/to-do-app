@@ -7,7 +7,7 @@ import { Subscription } from 'rxjs/internal/Subscription';
 export class EventEmitterService {
   
   invokeRefreshToDoList = new EventEmitter();    
-  subsVar: Subscription;    
+  refreshTodoListSubs: Subscription;    
     
   constructor() { }    
     

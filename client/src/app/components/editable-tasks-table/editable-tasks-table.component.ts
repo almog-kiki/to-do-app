@@ -18,13 +18,13 @@ export class EditableTasksTableComponent implements OnInit {
   
   ngOnInit(): void {
     this.retrieveTasks();
-    if (this.eventEmitterService.subsVar === undefined) {    
-        this.eventEmitterService.subsVar = this.eventEmitterService.invokeRefreshToDoList
+    if (this.eventEmitterService.refreshTodoListSubs === undefined) {    
+        this.eventEmitterService.refreshTodoListSubs = this.eventEmitterService.invokeRefreshToDoList
           .subscribe(() => {   this.retrieveTasks(); });    
     }  
   }
   ngOnDestroy():void{
-    this.eventEmitterService.subsVar  = undefined;
+    this.eventEmitterService.refreshTodoListSubs  = undefined;
   }
  
 
