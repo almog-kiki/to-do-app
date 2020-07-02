@@ -24,10 +24,10 @@
           </tr>
           <tr *ngFor="let task of tasks; let id = index">
             <td>
-              <span contenteditable="true" (keyup)="changeValue($event)" (blur)="updateList(id, 'title', task ,$event)">{{task.title}}</span>
+              <span class="editable-cell" contenteditable="true" (keyup)="changeValue($event)" (blur)="updateList(id, 'title', task ,$event)">{{task.title}}</span>
             </td>
             <td>
-              <span contenteditable="true" (keyup)="changeValue($event)" (blur)="updateList(id, 'content',task, $event)">{{task.content}}</span>
+              <span class="editable-cell" contenteditable="true" (keyup)="changeValue($event)" (blur)="updateList(id, 'content',task, $event)">{{task.content}}</span>
             </td>
             <td>
               <span contenteditable="false" (keyup)="changeValue($event)" (blur)="updateList(id, 'created',task, $event)">{{task.created}}</span>
