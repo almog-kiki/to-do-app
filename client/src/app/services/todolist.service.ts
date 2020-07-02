@@ -26,10 +26,6 @@ export class TodolistService {
   getAll() {
     return this.http.get(baseUrl).pipe(catchError(this.handleError));
   }
-  
-  getAll2() {
-    return this.http.get(baseUrl).pipe(catchError(this.handleError));;
-  }
 
   get(id) {
     return this.http.get(`${baseUrl}/${id}`).pipe(catchError(this.handleError));;
